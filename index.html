@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="iso-8891-1">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de MAC</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                     <input type="number" class="form-control" id="ano" placeholder="Ex: 2024">
                 </div>
                 <div class="form-group">
-                    <label for="mes">Mês:</label>
+                    <label for="mes">MÃªs:</label>
                     <input type="number" class="form-control" id="mes" placeholder="Ex: 6">
                 </div>
                 <button type="button" class="btn btn-primary" onclick="calcularMAC()">Calcular MAC</button>
@@ -65,25 +65,25 @@
             const mes = parseInt(document.getElementById('mes').value);
 
             if (isNaN(ano) || isNaN(mes) || mes < 1 || mes > 12) {
-                document.getElementById('resultadoMAC').textContent = "Por favor, insira valores válidos.";
+                document.getElementById('resultadoMAC').textContent = "Por favor, insira valores vÃ¡lidos.";
                 return;
             }
 
             const mac = (ano - 1900) * 12 + mes;
-            document.getElementById('resultadoMAC').textContent = "O MAC é: " + mac;
+            document.getElementById('resultadoMAC').textContent = "O MAC Ã©: " + mac;
         }
 
         function converterMAC() {
             const mac = parseInt(document.getElementById('mac').value);
 
             if (isNaN(mac) || mac < 0) {
-                document.getElementById('resultadoData').textContent = "Por favor, insira um MAC válido.";
+                document.getElementById('resultadoData').textContent = "Por favor, insira um MAC vÃ¡lido.";
                 return;
             }
 
             const ano = Math.floor(mac / 12) + 1900;
             const mes = mac % 12;
-            document.getElementById('resultadoData').textContent = "Ano: " + ano + ", Mês: " + (mes === 0 ? 12 : mes);
+            document.getElementById('resultadoData').textContent = "Ano: " + ano + ", MÃªs: " + (mes === 0 ? 12 : mes);
         }
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
